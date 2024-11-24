@@ -10,105 +10,133 @@
 </head>
 
 <body>
-    <header class="page-header">
-        <a class="page-header__logo logo" href="#"><img class="logo__img" src="logo.png" alt="Company Logo"></a>
-        <nav class="page-header__nav nav">
-            <button class="nav__toggle" type="button" aria-label="Toggle navigation">
+    <header class="header">
+        <a class="header__logo" href="#">
+            <img class="header__logo-image" src="img/logo.png" alt="Company Logo">
+        </a>
+        <nav class="page__navigation">
+            <button class="navigation__toggle" type="button" aria-label="Toggle navigation">
                 <span class="visually-hidden">Show menu</span>
             </button>
-            <ul class="nav__list">
-                <li class="nav__item"><a class="nav__link" href="#about">About us</a></li>
-                <li class="nav__item"><a class="nav__link" href="#services">Services</a></li>
-                <li class="nav__item"><a class="nav__link" href="#reviews">Reviews</a></li>
-                <li class="nav__item"><a class="nav__link" href="#contact">Order</a></li>
+            <ul class="navigation__list">
+                <li class="navigation__item"><a class="navigation__link" href="#about">About us</a></li>
+                <li class="navigation__item"><a class="navigation__link" href="#services">Services</a></li>
+                <li class="navigation__item"><a class="navigation__link" href="#reviews">Reviews</a></li>
+                <li class="navigation__item"><a class="navigation__link" href="#contact">Order</a></li>
             </ul>
         </nav>
-    </header>
-    <main>
-        <section class="hero-section">
-            <div class="hero-section__content">
-                <h1 class="hero-section__title">Professional Legal Assistance for Your Business and Life.</h1>
-                <p class="hero-section__subtitle">We solve complex legal issues quickly and reliably.</p>
-                <a class="hero-section__button" href="#contact">Get a consultation</a>
-            </div>
-            <div class="hero-section__image">
-                <img src="justice-statue.jpg" alt="Statue of Justice">
-            </div>
+        <section class="hero">
+            <h1 class="services-section__title">Professional legal assistance for your business and life.</h1>
+            <p class="services-section__description">We solve complex legal issues quickly and reliably.</p>
+            <a class="contact-form__button button--disabled" href="#contact">Get a consultation</a>
         </section>
+    </header>
+
+    <main>
         <section class="services-section" id="services">
-            <div class="services-section__header">
-                <h2 class="services-section__title">Comprehensive Legal Services for Every Need</h2>
+            <header class="services-section__header">
+                <h2 class="services-section__title">Comprehensive legal services for every need</h2>
                 <p class="services-section__description">Explore our wide range of services designed to address your
                     unique legal concerns.</p>
-            </div>
-            <div class="services-section__grid">
-                <div class="service-card">
-                    <h3 class="service-card__title">Corporate Law</h3>
-                    <p class="service-card__description">Business formation, mergers and acquisitions, compliance.</p>
-                </div>
-                <div class="service-card">
-                    <h3 class="service-card__title">Family Law</h3>
-                    <p class="service-card__description">Divorce proceedings, child custody, prenuptial agreements.</p>
-                </div>
-                <div class="service-card">
-                    <h3 class="service-card__title">Tax Advisory</h3>
-                    <p class="service-card__description">Tax planning, IRS representation, compliance strategies.</p>
-                </div>
-                <div class="service-card">
-                    <h3 class="service-card__title">Real Estate</h3>
+            </header>
+            <ul class="services-section__list">
+                <li class="service-section__item">
+                    <h3 class="service-card__title">Corporate law</h3>
+                    <p class="service-card__description">Business formation, mergers and acquisitions, compliance.
+                    </p>
+                </li>
+                <li class="service-section__item">
+                    <h3 class="service-card__title">Family law</h3>
+                    <p class="service-card__description">Divorce proceedings, child custody, prenuptial agreements.
+                    </p>
+                </li>
+                <li class="service-section__item">
+                    <h3 class="service-card__title">Tax advisory</h3>
+                    <p class="service-card__description">Tax planning, IRS representation, compliance strategies.
+                    </p>
+                </li>
+                <li class="service-section__item">
+                    <h3 class="service-card__title">Real estate</h3>
                     <p class="service-card__description">Property transactions, lease agreements, dispute resolution.
                     </p>
-                </div>
-            </div>
+                </li>
+            </ul>
         </section>
-        <section class="testimonials-section" id="reviews">
-            <div class="testimonials-section__header">
-                <h2 class="testimonials-section__title">Hear From Our Satisfied Clients</h2>
-                <p class="testimonials-section__description">
+
+        <section class="review-section" id="reviews">
+            <header class="services-section__header">
+                <h2 class="services-section__title">Hear from our satisfied clients</h2>
+                <p class="services-section__description">
                     We take pride in our clients' satisfaction and strive to exceed their expectations. Here's what they
                     have to say about working with us:
                 </p>
-            </div>
-            <div class="testimonials-section__list">
-                <blockquote class="testimonial">
-                    <p class="testimonial__text">
+            </header>
+            <div class="review__list">
+                <blockquote class="review">
+                    <p class="review__text">
                         "Thank you so much for this amazing opportunity to understand the deeper meanings of my dreams!
                         It helps me sort out what is happening in my subconscious. Now I feel much calmer and more
                         confident. Thanks to Sadhu’s interpretations, I was finally able to realize the real issue in my
                         relationship with my husband and saved our family."
                     </p>
-                    <cite class="testimonial__author">Markus, 24 years old</cite>
-                    <div class="testimonial__rating">★★★★★</div>
+                    <footer class="review__footer">
+                        <cite class="review__author">Markus1, 24 years old</cite>
+                        <div class="review__rating" role="img" aria-label="4-star rating"></div>
+                    </footer>
+                </blockquote>
+                <blockquote class="review">
+                    <p class="review__text">
+                        "Thank you so much for this amazing opportunity to understand the deeper meanings of my dreams!
+                        It helps me sort out what is happening in my subconscious. Now I feel much calmer and more
+                        confident. Thanks to Sadhu’s interpretations, I was finally able to realize the real issue in my
+                        relationship with my husband and saved our family."
+                    </p>
+                    <footer class="review__footer">
+                        <cite class="review__author">Markus2, 24 years old</cite>
+                        <div class="review__rating" role="img" aria-label="5-star rating"></div>
+                    </footer>
+                </blockquote>
+                <blockquote class="review">
+                    <p class="review__text">
+                        "Thank you so much for this amazing opportunity to understand the deeper meanings of my dreams!
+                        It helps me sort out what is happening in my subconscious. Now I feel much calmer and more
+                        confident. Thanks to Sadhu’s interpretations, I was finally able to realize the real issue in my
+                        relationship with my husband and saved our family."
+                    </p>
+                    <footer class="review__footer">
+                        <cite class="review__author">Markus3, 24 years old</cite>
+                        <div class="review__rating" role="img" aria-label="4-star rating"></div>
+                    </footer>
                 </blockquote>
             </div>
         </section>
+
         <section class="contact-form-section" id="contact">
             <div class="contact-form-section__header">
-                <h2 class="contact-form-section__title">Submit a Request for Legal Consultation</h2>
-                <p class="contact-form-section__description">Fill out the form, and we will contact you to discuss your
+                <h2 class="services-section__title">Submit a request for legal consultation</h2>
+                <p class="services-section__description">Fill out the form, and we will contact you to discuss your
                     inquiry.</p>
             </div>
             <form class="contact-form" method="post">
-                <label for="name" class="contact-form__label">Your name</label>
-                <input id="name" name="name" type="text" class="contact-form__input" placeholder="Enter your name"
-                    required>
+                <input id="name" name="name" type="text" class="contact-form__input"
+                    placeholder="Tell us about your problem in as much detail as possible" required>
                 <p class="contact-form__note">"After receiving your request, I will personally analyze your situation.
                     The result will be a detailed description of your legal needs."</p>
-                <button class="contact-form__button" type="submit">Get a consultation</button>
+                <button class="contact-form__button button--active" type="submit">Get a consultation</button>
             </form>
         </section>
     </main>
-    <footer class="page-footer">
+    <!--<footer class="page-footer">
         <div class="page-footer__content">
-            <p class="page-footer__copyright">© 2024 lawcompany</p>
-            <nav class="page-footer__nav">
+            <div class="page-footer__nav">
                 <a href="#about" class="page-footer__link">About us</a>
                 <a href="#services" class="page-footer__link">Services</a>
                 <a href="#reviews" class="page-footer__link">Reviews</a>
-            </nav>
+            </div>
             <a href="tel:+70000000000" class="page-footer__phone">+7 000 000 000</a>
+            <p class="page-footer__copyright">© 2024 lawcompany</p>
         </div>
-    </footer>
+    </footer>-->
 </body>
 
 </html>
