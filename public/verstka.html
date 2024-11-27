@@ -11,132 +11,130 @@
 
 <body>
     <header class="header">
-        <a class="header__logo" href="#">
+        <a class="header__logo" href="#" aria-current="page">
             <img class="header__logo-image" src="img/logo.png" alt="Company Logo">
         </a>
-        <nav class="page__navigation">
-            <button class="navigation__toggle" type="button" aria-label="Toggle navigation">
+        <nav class="page-navigation">
+            <button class="page-navigation__toggle" type="button" aria-label="Toggle page-navigation">
                 <span class="visually-hidden">Show menu</span>
             </button>
-            <ul class="navigation__list">
-                <li class="navigation__item"><a class="navigation__link" href="#about">About us</a></li>
-                <li class="navigation__item"><a class="navigation__link" href="#services">Services</a></li>
-                <li class="navigation__item"><a class="navigation__link" href="#reviews">Reviews</a></li>
-                <li class="navigation__item"><a class="navigation__link" href="#contact">Order</a></li>
+            <ul class="page-navigation__list">
+                <li class="page-navigation__item"><a class="page-navigation__link" href="#about">About us</a></li>
+                <li class="page-navigation__item"><a class="page-navigation__link" href="#services">Services</a></li>
+                <li class="page-navigation__item"><a class="page-navigation__link" href="#reviews">Reviews</a></li>
+                <li class="page-navigation__item"><a class="page-navigation__link" href="#contact">Consultation</a></li>
             </ul>
         </nav>
-        <section class="hero">
-            <h1 class="services-section__title">Professional legal assistance for your business and life.</h1>
-            <p class="services-section__description">We solve complex legal issues quickly and reliably.</p>
-            <a class="contact-form__button button--disabled" href="#contact">Get a consultation</a>
+        <section class="section">
+            <h1 class="section__title">Professional legal assistance for your
+                business and life.</h1>
+            <p class="section__description">We solve complex legal issues quickly and reliably.</p>
+            <a class="section__button section__button--disabled" href="#contact">Get a consultation</a>
+        </section>
+        <section class="intro-section">
+            <h2 class="intro-section__title">At [Your Company Name], we deliver
+                expert legal services for businesses and
+                individuals, specializing in corporate law, family law, tax advisory, and more. Trust us to guide you
+                through complex legal challenges with proven success.</h2>
         </section>
     </header>
 
     <main>
-        <section class="services-section" id="services">
-            <header class="services-section__header">
-                <h2 class="services-section__title">Comprehensive legal services for every need</h2>
-                <p class="services-section__description">Explore our wide range of services designed to address your
+        <section class="section-services" id="services">
+            <header class="section-header">
+                <h2 class="section-header__title">Comprehensive legal services for every need</h2>
+                <p class="section-header__description">Explore our wide range of services designed to address your
                     unique legal concerns.</p>
             </header>
-            <ul class="services-section__list">
-                <li class="service-section__item">
-                    <h3 class="service-card__title">Corporate law</h3>
-                    <p class="service-card__description">Business formation, mergers and acquisitions, compliance.
+            <ul class="section-list">
+                <li class="section-list__item">
+                    <h3 class="section-list__title">Corporate law</h3>
+                    <p class="section-list__description">Business formation, mergers and acquisitions, compliance.
                     </p>
                 </li>
-                <li class="service-section__item">
-                    <h3 class="service-card__title">Family law</h3>
-                    <p class="service-card__description">Divorce proceedings, child custody, prenuptial agreements.
+                <li class="section-list__item">
+                    <h3 class="section-list__title">Family law</h3>
+                    <p class="section-list__description">Divorce proceedings, child custody, prenuptial agreements.
                     </p>
                 </li>
-                <li class="service-section__item">
-                    <h3 class="service-card__title">Tax advisory</h3>
-                    <p class="service-card__description">Tax planning, IRS representation, compliance strategies.
+                <li class="section-list__item">
+                    <h3 class="section-list__title">Tax advisory</h3>
+                    <p class="section-list__description">Tax planning, IRS representation, compliance strategies.
                     </p>
                 </li>
-                <li class="service-section__item">
-                    <h3 class="service-card__title">Real estate</h3>
-                    <p class="service-card__description">Property transactions, lease agreements, dispute resolution.
+                <li class="section-list__item">
+                    <h3 class="section-list__title">Real estate</h3>
+                    <p class="section-list__description">Property transactions, lease agreements, dispute resolution.
                     </p>
                 </li>
             </ul>
         </section>
 
-        <section class="review-section" id="reviews">
-            <header class="services-section__header">
-                <h2 class="services-section__title">Hear from our satisfied clients</h2>
-                <p class="services-section__description">
+        <section class="section-review" id="reviews">
+            <header class="section-header">
+                <h2 class="section-header__title">Hear from our satisfied clients</h2>
+                <p class="section-header__description">
                     We take pride in our clients' satisfaction and strive to exceed their expectations. Here's what they
                     have to say about working with us:
                 </p>
             </header>
-            <div class="review__list">
-                <blockquote class="review">
-                    <p class="review__text">
-                        "Thank you so much for this amazing opportunity to understand the deeper meanings of my dreams!
-                        It helps me sort out what is happening in my subconscious. Now I feel much calmer and more
-                        confident. Thanks to Sadhu’s interpretations, I was finally able to realize the real issue in my
-                        relationship with my husband and saved our family."
-                    </p>
-                    <footer class="review__footer">
-                        <cite class="review__author">Markus1, 24 years old</cite>
-                        <div class="review__rating" role="img" aria-label="4-star rating"></div>
-                    </footer>
-                </blockquote>
-                <blockquote class="review">
-                    <p class="review__text">
-                        "Thank you so much for this amazing opportunity to understand the deeper meanings of my dreams!
-                        It helps me sort out what is happening in my subconscious. Now I feel much calmer and more
-                        confident. Thanks to Sadhu’s interpretations, I was finally able to realize the real issue in my
-                        relationship with my husband and saved our family."
-                    </p>
-                    <footer class="review__footer">
-                        <cite class="review__author">Markus2, 24 years old</cite>
-                        <div class="review__rating" role="img" aria-label="5-star rating"></div>
-                    </footer>
-                </blockquote>
-                <blockquote class="review">
-                    <p class="review__text">
-                        "Thank you so much for this amazing opportunity to understand the deeper meanings of my dreams!
-                        It helps me sort out what is happening in my subconscious. Now I feel much calmer and more
-                        confident. Thanks to Sadhu’s interpretations, I was finally able to realize the real issue in my
-                        relationship with my husband and saved our family."
-                    </p>
-                    <footer class="review__footer">
-                        <cite class="review__author">Markus3, 24 years old</cite>
-                        <div class="review__rating" role="img" aria-label="4-star rating"></div>
-                    </footer>
-                </blockquote>
-            </div>
         </section>
+        <div class="review">
+            <blockquote class="review__list">
+                <p class="review__text">
+                    "Thank you so much for this amazing opportunity to understand the deeper meanings of my dreams!
+                    It helps me sort out what is happening in my subconscious. Now I feel much calmer and more
+                    confident. Thanks to Sadhu’s interpretations, I was finally able to realize the real issue in my
+                    relationship with my husband and saved our family."
+                </p>
+                <footer class="review__footer">
+                    <cite class="review__author">Markus1, 24 years old</cite>
+                    <div class="review__rating" role="img" aria-label="4-star rating"></div>
+                </footer>
+            </blockquote>
+            <blockquote class="review">
+                <p class="review__text">
+                    "Thank you so much for this amazing opportunity to understand the deeper meanings of my dreams!
+                    It helps me sort out what is happening in my subconscious. Now I feel much calmer and more
+                    confident. Thanks to Sadhu’s interpretations, I was finally able to realize the real issue in my
+                    relationship with my husband and saved our family."
+                </p>
+                <footer class="review__footer">
+                    <cite class="review__author">Markus2, 24 years old</cite>
+                    <div class="review__rating" role="img" aria-label="5-star rating"></div>
+                </footer>
+            </blockquote>
+            <blockquote class="review">
+                <p class="review__text">
+                    "Thank you so much for this amazing opportunity to understand the deeper meanings of my dreams!
+                    It helps me sort out what is happening in my subconscious. Now I feel much calmer and more
+                    confident. Thanks to Sadhu’s interpretations, I was finally able to realize the real issue in my
+                    relationship with my husband and saved our family."
+                </p>
+                <footer class="review__footer">
+                    <cite class="review__author">Markus3, 24 years old</cite>
+                    <div class="review__rating" role="img" aria-label="4-star rating"></div>
+                </footer>
+            </blockquote>
+        </div>
 
-        <section class="contact-form-section" id="contact">
-            <div class="contact-form-section__header">
-                <h2 class="services-section__title">Submit a request for legal consultation</h2>
-                <p class="services-section__description">Fill out the form, and we will contact you to discuss your
+        <section class="section-contact-form" id="contact">
+            <header class="section-header">
+                <h2 class="section-header__title">Submit a request for legal consultation</h2>
+                <p class="section-header__description">Fill out the form, and we will contact you to discuss your
                     inquiry.</p>
-            </div>
+            </header>
             <form class="contact-form" method="post">
-                <input id="name" name="name" type="text" class="contact-form__input"
-                    placeholder="Tell us about your problem in as much detail as possible" required>
-                <p class="contact-form__note">"After receiving your request, I will personally analyze your situation.
+                <label for="problem-description" class="contact-form__label">Describe your problem:</label>
+                <textarea id="problem-description" name="problem-description" class="contact-form__textarea"
+                    placeholder="Tell us about your problem in as much detail as possible" required></textarea>
+                <p class="contact-form__note">"After receiving your request, I will personally analyze your
+                    situation.
                     The result will be a detailed description of your legal needs."</p>
-                <button class="contact-form__button button--active" type="submit">Get a consultation</button>
+                <button class="contact-form__button" type="submit">Get a consultation</button>
             </form>
         </section>
     </main>
-    <!--<footer class="page-footer">
-        <div class="page-footer__content">
-            <div class="page-footer__nav">
-                <a href="#about" class="page-footer__link">About us</a>
-                <a href="#services" class="page-footer__link">Services</a>
-                <a href="#reviews" class="page-footer__link">Reviews</a>
-            </div>
-            <a href="tel:+70000000000" class="page-footer__phone">+7 000 000 000</a>
-            <p class="page-footer__copyright">© 2024 lawcompany</p>
-        </div>
-    </footer>-->
 </body>
 
 </html>
