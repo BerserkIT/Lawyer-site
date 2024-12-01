@@ -15,7 +15,7 @@
             <img class="header__logo-image" src="img/logo.png" alt="Company Logo">
         </a>
         <nav class="page-navigation">
-            <button class="page-navigation__toggle" type="button" aria-label="Toggle page-navigation">
+            <button class="page-navigation__toggle button" type="button" aria-label="Toggle page-navigation">
                 <span class="visually-hidden">Show menu</span>
             </button>
             <ul class="page-navigation__list">
@@ -25,6 +25,9 @@
                 <li class="page-navigation__item"><a class="page-navigation__link" href="#contact">Consultation</a></li>
             </ul>
         </nav>
+        <canvas class="header__canvas-shooting-stars" id="shooting-stars" width="100vw" height="100vh">
+            no canvas support in your browser
+        </canvas>
         <section class="section">
             <h1 class="section__title">Professional legal assistance for your
                 business and life.</h1>
@@ -33,6 +36,9 @@
         </section>
     </header>
     <main>
+        <canvas class="canvas-static-stars" id="static-stars" width="100vw" height="100vh">
+            no canvas support in your browser
+        </canvas>
         <section class="about">
             <p class="about__text">At [Your Company Name], we deliver
                 expert legal services for businesses and
@@ -122,7 +128,7 @@
                     inquiry.</p>
             </header>
             <form class="contact__form form" method="post">
-                <label for="problem-description" class="form__label">Describe your problem:</label>
+                <label for="problem-description" class="form__label"></label>
                 <textarea id="problem-description" name="problem-description" class="from__control form__textarea"
                     placeholder="Tell us about your problem in as much detail as possible" required></textarea>
                 <p class="form__note">"After receiving your request, I will personally analyze your
@@ -133,5 +139,6 @@
         </section>
     </main>
 </body>
+<script src="canvas.js"></script>
 
 </html>
