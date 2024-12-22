@@ -73,11 +73,11 @@ body {
 
 .section__title {
     font-weight: 500;
-    font-size: 60px;
+    font-size: 30px;
 }
 
-.about {
-    font-size: 40px;
+.about__text {
+    font-size: 20px;
 }
 
 /* Чтобы их объединить мне нужно либо дать еще один класс,либо перечислять все вместе,какую реализацию лучше выбрать? */
@@ -87,19 +87,19 @@ body {
 }
 
 .section-header__description {
-    font-size: 24px;
+    font-size: 16px;
 }
 
 .section__description {
-    font-size: 24px;
+    font-size: 16px;
 }
 
 .blockquote__text {
-    font-size: 24px;
+    font-size: 16px;
 }
 
 .blockquote__author {
-    font-size: 24px;
+    font-size: 16px;
     font-style: normal;
 }
 
