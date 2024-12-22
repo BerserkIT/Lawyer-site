@@ -1,52 +1,60 @@
 const opts = {
-    minRadius: 0.5,
-    maxRadius: 1.5,
-    colors: ["rgba(255, 255, 255, 0.5)", "rgba(252, 244, 201, 0.5)", "rgba(201, 252, 201, 0.5)", "rgba(201, 236, 252, 0.5)", "rgba(229, 201, 252, 0.5)", "rgba(252, 201, 201, 0.5)", "rgba(252, 201, 241, 0.5)", "rgba(252, 201, 201, 0.5)"],
-    delay: 100,
-    step: 0.05,
+    minRadius: 0.2,
+    maxRadius: 1,
+    colors: [
+        "rgba(255, 255, 255, 0.5)",
+        "rgba(252, 244, 201, 0.5)",
+        "rgba(201, 252, 201, 0.5)",
+        "rgba(201, 236, 252, 0.5)",
+        "rgba(229, 201, 252, 0.5)",
+        "rgba(252, 201, 201, 0.5)",
+        "rgba(252, 201, 241, 0.5)",
+        "rgba(252, 201, 201, 0.5)"
+    ],
+    delay: 10,
+    step: 0.1,
     trangles: 4,
-    intervalRadius: 2.5,
-    shootingStarSpeed: 2,
-    shootingStarLength: 100,
+    intervalRadius: 1,
+    shootingStarSpeed: 0.5,
+    shootingStarLength: 100
 };
+
+let staticAnimationFrame, shootingAnimationFrame;
 
 // Для статичных звезд
 const staticCanvas = document.querySelector("#static-stars");
 const staticCtx = staticCanvas.getContext("2d");
 let staticW, staticH;
 const staticStars = [];
-initializeCanvas(staticCanvas, (w, h) => {
-    staticW = w;
-    staticH = h;
-    setupStaticStars();
-});
 
 // Для падающих звезд
 const shootingCanvas = document.querySelector("#shooting-stars");
 const shootingCtx = shootingCanvas.getContext("2d");
 let shootingW, shootingH;
 const shootingStars = [];
-initializeCanvas(shootingCanvas, (w, h) => {
-    shootingW = w;
-    shootingH = h;
-    setupShootingStars();
-});
 
 // Инициализация канваса
 function initializeCanvas(canvas, onResize) {
     function resize() {
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
+        cancelAnimationFrame(staticAnimationFrame);
+        cancelAnimationFrame(shootingAnimationFrame);
+
+        sizeCanvas(canvas);
         onResize(canvas.width, canvas.height);
     }
-    resize();
     window.addEventListener("resize", resize);
+    resize();
+}
+
+function sizeCanvas(canvas) {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
 }
 
 // Статичные звезды
 function setupStaticStars() {
     staticStars.length = 0;
-    for (let i = 0; i < (staticW / 150) * (staticH / 150); i++) {
+    for (let i = 0; i < Math.ceil((staticW * staticH) / 50000); i++) {
         staticStars.push(new Star(staticW, staticH));
     }
     drawStaticStars();
@@ -56,89 +64,69 @@ function drawStaticStars() {
     staticCtx.clearRect(0, 0, staticW, staticH);
     for (let star of staticStars) {
         star.draw(staticCtx);
+        star.update();
     }
+    staticAnimationFrame = requestAnimationFrame(drawStaticStars);
 }
 
 // Падающие звезды
 function setupShootingStars() {
     shootingStars.length = 0;
-    createShootingStar();
-    animateShootingStars();
+    for (let i = 0; i < Math.ceil((shootingW * shootingH) / 100000); i++) {
+        createShootingStar();
+    }
+    drawShootingStars();
 }
-
 
 function createShootingStar() {
     const shootingStar = {
         x: Math.random() * shootingW,
         y: Math.random() * shootingH,
-        speedX: opts.shootingStarSpeed * 10, // Высокая скорость влево
-        speedY: opts.shootingStarSpeed * 5, // Скорость вниз
+        speedX: opts.shootingStarSpeed * 10,
+        speedY: opts.shootingStarSpeed * 4,
         radius: opts.minRadius + Math.random() * (opts.maxRadius - opts.minRadius),
         color: opts.colors[Math.floor(Math.random() * opts.colors.length)],
-        trail: [],
+        trail: []
     };
 
     shootingStars.push(shootingStar);
-    setTimeout(createShootingStar, 300 + Math.random() * 300); // Интервал появления звезд
 }
 
-function animateShootingStars() {
-    // Очищаем весь холст
+function drawShootingStars() {
     shootingCtx.clearRect(0, 0, shootingW, shootingH);
 
     shootingStars.forEach((star, index) => {
-        // Добавляем текущую позицию в след звезды
         star.trail.push({ x: star.x, y: star.y });
-        if (star.trail.length > 10) star.trail.shift(); // Ограничиваем длину следа
+        if (star.trail.length > 10) star.trail.shift();
 
-        // Рисуем след
         for (let i = 0; i < star.trail.length; i++) {
             const point = star.trail[i];
             shootingCtx.beginPath();
-            shootingCtx.arc(point.x, point.y, star.radius, 0, Math.PI * 2); // След остается того же радиуса
-            shootingCtx.globalAlpha = i / star.trail.length; // Прозрачность уменьшается
+            shootingCtx.arc(point.x, point.y, star.radius, 0, Math.PI * 2);
+            shootingCtx.globalAlpha = i / star.trail.length;
             shootingCtx.fillStyle = star.color;
             shootingCtx.fill();
         }
 
-        // Рассчитываем прозрачность основной звезды
-        const fadeDistance = Math.min(shootingW, shootingH) * 0.1; // 10% от меньшего измерения холста
-        let alpha = 1;
-
-        if (star.x < fadeDistance) {
-            alpha = star.x / fadeDistance;
-        } else if (star.x > shootingW - fadeDistance) {
-            alpha = (shootingW - star.x) / fadeDistance;
-        }
-
-        if (star.y < fadeDistance) {
-            alpha = Math.min(alpha, star.y / fadeDistance);
-        } else if (star.y > shootingH - fadeDistance) {
-            alpha = Math.min(alpha, (shootingH - star.y) / fadeDistance);
-        }
-
-        shootingCtx.globalAlpha = alpha; // Устанавливаем прозрачность
-
-        // Рисуем основную звезду (увеличенный радиус)
+        shootingCtx.globalAlpha = 1;
         shootingCtx.beginPath();
-        const largerRadius = star.radius * 4; // Увеличиваем радиус основной звезды
+        const largerRadius = star.radius * 4;
         shootingCtx.arc(star.x, star.y, largerRadius, 0, Math.PI * 2);
         shootingCtx.fillStyle = star.color;
         shootingCtx.fill();
 
-        // Обновляем положение звезды
-        star.x -= star.speedX; // Движение влево
-        star.y += star.speedY; // Движение вниз
+        star.x -= star.speedX;
+        star.y += star.speedY;
 
-        // Удаляем звезду, если она вышла за пределы экрана
         if (star.y - largerRadius > shootingH || star.x < -50) {
             shootingStars.splice(index, 1);
+            createShootingStar();
         }
     });
 
-    // Запускаем следующий кадр анимации
-    requestAnimationFrame(animateShootingStars);
+    shootingAnimationFrame = requestAnimationFrame(drawShootingStars);
 }
+
 // Класс звезды
 function Star(w, h) {
     this.x = Math.random() * w;
@@ -147,6 +135,8 @@ function Star(w, h) {
     this.minRadius = opts.minRadius + Math.random() * (opts.maxRadius - opts.minRadius);
     this.maxRadius = this.minRadius + opts.intervalRadius;
     this.vector = Math.round(Math.random()) || -1;
+    this.colorChangeRate = Math.random() * 0.02 + 0.01;
+    this.currentColorIndex = Math.floor(Math.random() * opts.colors.length);
 
     this.draw = function (ctx) {
         ctx.beginPath();
@@ -162,10 +152,41 @@ function Star(w, h) {
     };
 
     this.update = function () {
+        // Update radius for pulsation
         this.minRadius += opts.step * this.vector;
         this.maxRadius += opts.step * this.vector;
         if (this.minRadius > opts.maxRadius || this.minRadius < opts.minRadius) {
             this.vector *= -1;
         }
+
+        // Update color for gradient effect
+        this.currentColorIndex = (this.currentColorIndex + this.colorChangeRate) % opts.colors.length;
+        const nextColorIndex = Math.floor(this.currentColorIndex + 1) % opts.colors.length;
+        const mixRatio = this.currentColorIndex % 1;
+
+        const currentColor = parseColor(opts.colors[Math.floor(this.currentColorIndex)]);
+        const nextColor = parseColor(opts.colors[nextColorIndex]);
+
+        this.color = `rgba(${Math.round(currentColor[0] * (1 - mixRatio) + nextColor[0] * mixRatio)},
+                          ${Math.round(currentColor[1] * (1 - mixRatio) + nextColor[1] * mixRatio)},
+                          ${Math.round(currentColor[2] * (1 - mixRatio) + nextColor[2] * mixRatio)},
+                          ${currentColor[3] * (1 - mixRatio) + nextColor[3] * mixRatio})`;
     };
 }
+
+function parseColor(color) {
+    const match = color.match(/rgba?\((\d+), (\d+), (\d+),? ?(\d*\.?\d+)?\)/);
+    return match ? [parseInt(match[1]), parseInt(match[2]), parseInt(match[3]), parseFloat(match[4] || 1)] : [0, 0, 0, 1];
+}
+
+initializeCanvas(staticCanvas, (w, h) => {
+    staticW = w;
+    staticH = h;
+    setupStaticStars();
+});
+
+initializeCanvas(shootingCanvas, (w, h) => {
+    shootingW = w;
+    shootingH = h;
+    setupShootingStars();
+});
