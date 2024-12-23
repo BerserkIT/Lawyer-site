@@ -11,30 +11,37 @@
 
 <body>
     <header class="header">
-        <a class="header__company_name" href="#" aria-current="page">WorkLaw</a>
-        <nav class="page-navigation">
-            <button class="page-navigation__toggle" type="button" aria-label="Toggle page-navigation">
-                <span class="visually-hidden">Show menu</span>
-            </button>
-            <ul class="page-navigation__list">
-                <li class="page-navigation__item"><a class="page-navigation__link" href="#about">About us</a></li>
-                <li class="page-navigation__item"><a class="page-navigation__link" href="#services">Services</a></li>
-                <li class="page-navigation__item"><a class="page-navigation__link" href="#reviews">Reviews</a></li>
-                <li class="page-navigation__item"><a class="page-navigation__link" href="#contact">Consultation</a></li>
-            </ul>
-        </nav>
-        <canvas class="header__canvas-shooting-stars" id="shooting-stars" width="100vw" height="100vh">
+        <section class="header__top">
+            <a class="header__top-company-name" href="#" aria-current="page">WorkLaw</a>
+            <nav class="page-navigation">
+                <button class="page-navigation__toggle" type="button" aria-label="Toggle page-navigation">
+                    <span class="visually-hidden">Show menu</span>
+                </button>
+                <ul class="page-navigation__list">
+                    <li class="page-navigation__item"><a class="page-navigation__link" href="#about">About us</a></li>
+                    <li class="page-navigation__item"><a class="page-navigation__link" href="#services">Services</a>
+                    </li>
+                    <li class="page-navigation__item"><a class="page-navigation__link" href="#reviews">Reviews</a></li>
+                    <li class="page-navigation__item"><a class="page-navigation__link" href="#contact">Consultation</a>
+                    </li>
+                </ul>
+            </nav>
+        </section>
+        <canvas class="header__canvas-shooting-stars" id="shooting-stars">
             no canvas support in your browser
         </canvas>
-        <section class="section">
-            <h1 class="section__title">Professional legal assistance for your
-                business and life.</h1>
-            <p class="section__description">We solve complex legal issues quickly and reliably.</p>
-            <a class="button" href="#contact">Get a consultation</a>
+        <section class="section-header">
+            <h1 class="section-header__title">Professional legal assistance for your business and life.
+            </h1>
+            <p class="section-header__description ">We solve complex legal issues quickly and reliably.</p>
+            <a class="button section-header__button" href="#contact">
+                <span class="section-header__button-icon"></span>
+                <span class="section-header__button-text">Get a consultation</span>
+            </a>
         </section>
     </header>
     <main>
-        <canvas class="canvas-static-stars" id="static-stars" width="100vw" height="100vh">
+        <canvas class="canvas-static-stars" id="static-stars">
             no canvas support in your browser
         </canvas>
         <section class="about">
@@ -44,7 +51,7 @@
                 through complex legal challenges with proven success.</p>
         </section>
         <section class="services" id="services">
-            <header class="section-header">
+            <header class="section-header text-align-center">
                 <h2 class="section-header__title">Comprehensive legal services for every need</h2>
                 <p class="section-header__description">Explore our wide range of services designed to address your
                     unique legal concerns.</p>
@@ -73,7 +80,7 @@
             </ul>
         </section>
         <section class="review" id="reviews">
-            <header class="section-header">
+            <header class="section-header text-align-center">
                 <h2 class="section-header__title">Hear from our satisfied clients</h2>
                 <p class="section-header__description">
                     We take pride in our clients' satisfaction and strive to exceed their expectations. Here's what they
@@ -136,7 +143,7 @@
             </form>
         </section>
     </main>
+    <script src="canvas.js"></script>
 </body>
-<script src="canvas.js"></script>
 
 </html>

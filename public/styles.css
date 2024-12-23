@@ -16,103 +16,218 @@
 }
 
 body {
-    background-color: rgb(12, 24, 39);
     margin: 0;
     padding: 0;
     font-family: 'Oswald', Arial, Helvetica, sans-serif;
     color: white;
     font-weight: 400;
+    font-size: 16px;
+    background: linear-gradient(to bottom left, rgb(12, 24, 39), rgb(24, 48, 78));
 }
 
-.header__company_name {
+h1,
+h2 {
+    margin: 0;
+}
+
+.header {
+    background-color: inherit;
+    color: inherit;
+    margin-bottom: 707px;
+}
+
+.header__top {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 90px;
+}
+
+.header__top-company-name {
+    margin-top: 20px;
+    margin-left: 20px;
+    font-size: 20px;
     text-decoration: none;
     color: inherit;
+
+}
+
+.page-navigation {
+    display: flex;
+    align-items: center;
+}
+
+.visually-hidden {
+    content-visibility: hidden;
+}
+
+.page-navigation__toggle {
+    padding: inherit;
+    margin-top: 20px;
+    margin-right: 20px;
+    width: 36px;
+    height: 36px;
+    background-color: white;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    position: relative;
+}
+
+.page-navigation__toggle:hover {
+    background-color: #f0f0f0;
+}
+
+/* Полоски внутри кнопки */
+.page-navigation__toggle::before,
+.page-navigation__toggle::after,
+.page-navigation__toggle span {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 2px;
+    background-color: black;
+    position: absolute;
+    transition: all 0.5s ease;
+}
+
+/* Расположение полосок */
+.page-navigation__toggle::before {
+    top: 12px;
+}
+
+.page-navigation__toggle::after {
+    top: 24px;
+}
+
+.page-navigation__toggle span {
+    top: 18px;
+}
+
+.page-navigation__list {
+    display: none;
+    list-style: none;
 }
 
 .page-navigation__link {
     text-decoration: none;
     color: inherit;
-    list-style: none;
 }
+
+.section-header {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.section-header__description {
+    margin-bottom: 30px;
+    margin-top: inherit;
+}
+
+
 
 .button {
     text-decoration: none;
     color: white;
-    font-size: 18px;
+    font-size: 16px;
     font-family: inherit;
-    background-color: rgba(12, 24, 39, 0.5);
-    font-weight: 400;
+    background-color: inherit;
+    font-weight: inherit;
 }
 
+.section-header__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    width: 220px;
+    height: 72px;
+    background-color: #0c1827;
+    border: none;
+    border-radius: 36px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+}
+
+.section-header__button:hover {
+    background-color: #112b45;
+}
+
+.section-header__button-icon {
+    width: 36px;
+    /* Размер круга */
+    height: 36px;
+    background-color: #ffcc00;
+    /* Желтый цвет */
+    border-radius: 50%;
+    /* Делает круг */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.section-header__button-icon::before {
+    content: '';
+    border-left: 15px solid rgb(12, 24, 39);
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-radius: 25%;
+    position: relative;
+    left: 1px;
+}
+
+.section-header__button-text {
+    color: white;
+    /* Цвет текста */
+    font-size: 16px;
+    font-weight: bold;
+    font-family: inherit;
+}
+
+
 .form__control {
-    background-color: rgba(12, 24, 39, 0.5);
+    background-color: inherit;
     font-size: 18px;
     font-family: inherit;
-    color: white;
-    font-weight: 400;
+    color: inherit;
+    font-weight: inherit;
 }
 
 .form__textarea {
     height: 200px;
-    width: 400px;
+    width: auto;
 }
-
-/* Заголовки и тайтлы объединить */
 
 .form__note {
     font-size: 18px;
-    font-family: inherit;
-    color: white;
-    background-color: rgba(12, 24, 39, 0.5);
-    font-weight: 400;
 }
 
-.services__item {
-    list-style: none;
-}
 
 .section__title {
     font-weight: 500;
     font-size: 30px;
 }
 
-.about__text {
-    font-size: 20px;
-}
 
-/* Чтобы их объединить мне нужно либо дать еще один класс,либо перечислять все вместе,какую реализацию лучше выбрать? */
 .section-header__title {
     font-weight: 500;
-    font-size: 50px;
-}
-
-.section-header__description {
-    font-size: 16px;
-}
-
-.section__description {
-    font-size: 16px;
-}
-
-.blockquote__text {
-    font-size: 16px;
+    font-size: 30px;
+    margin-bottom: 30px;
+    margin-top: inherit;
 }
 
 .blockquote__author {
-    font-size: 16px;
     font-style: normal;
 }
 
 .services__list-title {
     font-weight: 500;
-    font-size: 30px;
-}
-
-.canvas {
-    width: 100%;
-    height: 100px;
-    background-color: #050818;
-    background-image: radial-gradient(at bottom, #090f2d, #050818);
+    font-size: 24px;
 }
 
 .canvas-static-stars {
@@ -122,15 +237,81 @@ body {
     top: 0;
     left: 0;
     pointer-events: none;
-    z-index: -1;
+    z-index: 0;
 }
 
 .header__canvas-shooting-stars {
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     position: fixed;
     top: 0;
     left: 0;
     pointer-events: none;
-    z-index: -1;
+    z-index: 0;
+}
+
+.about__text {
+    font-size: 20px;
+    align-items: center;
+    margin-top: inherit;
+    margin-bottom: inherit;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.about {
+    margin-bottom: 60px;
+}
+
+.text-align-center {
+    text-align: center;
+}
+
+.services__item {
+    list-style: none;
+    padding: initial;
+    width: 353px;
+    height: 347px;
+    background: rgba(12, 24, 39, 1);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    color: white;
+    position: relative;
+    overflow: hidden;
+    text-align: left;
+    margin: auto;
+}
+
+.services__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    align-items: flex-start;
+    padding: initial;
+    margin-top: 0px;
+    margin-bottom: 60px;
+}
+
+.services__list-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-left: 20px;
+    z-index: 2;
+    position: relative;
+}
+
+.services__list-description {
+    margin-top: 0px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    margin-right: 69px;
+    font-size: 16px;
+    z-index: 2;
+    position: relative;
+    line-height: 1.5;
 }

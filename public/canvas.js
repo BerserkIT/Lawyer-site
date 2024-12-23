@@ -54,7 +54,7 @@ function sizeCanvas(canvas) {
 // Статичные звезды
 function setupStaticStars() {
     staticStars.length = 0;
-    for (let i = 0; i < Math.ceil((staticW * staticH) / 50000); i++) {
+    for (let i = 0; i < Math.ceil((staticW * staticH) / 5000); i++) {
         staticStars.push(new Star(staticW, staticH));
     }
     drawStaticStars();
@@ -72,7 +72,7 @@ function drawStaticStars() {
 // Падающие звезды
 function setupShootingStars() {
     shootingStars.length = 0;
-    for (let i = 0; i < Math.ceil((shootingW * shootingH) / 100000); i++) {
+    for (let i = 0; i < Math.ceil((shootingW * shootingH) / 10000000); i++) {
         createShootingStar();
     }
     drawShootingStars();
@@ -82,7 +82,7 @@ function createShootingStar() {
     const shootingStar = {
         x: Math.random() * shootingW,
         y: Math.random() * shootingH,
-        speedX: opts.shootingStarSpeed * 10,
+        speedX: opts.shootingStarSpeed * 8,
         speedY: opts.shootingStarSpeed * 4,
         radius: opts.minRadius + Math.random() * (opts.maxRadius - opts.minRadius),
         color: opts.colors[Math.floor(Math.random() * opts.colors.length)],
