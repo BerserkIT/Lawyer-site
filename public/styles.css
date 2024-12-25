@@ -138,7 +138,7 @@ h2 {
     font-weight: inherit;
 }
 
-.section-header__button {
+.button {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -154,11 +154,11 @@ h2 {
     text-decoration: none;
 }
 
-.section-header__button:hover {
+.button:hover {
     background-color: #112b45;
 }
 
-.section-header__button-icon {
+.button-icon {
     width: 36px;
     /* Размер круга */
     height: 36px;
@@ -171,7 +171,7 @@ h2 {
     justify-content: center;
 }
 
-.section-header__button-icon::before {
+.button-icon::before {
     content: '';
     border-left: 15px solid rgb(12, 24, 39);
     border-top: 10px solid transparent;
@@ -181,30 +181,11 @@ h2 {
     left: 1px;
 }
 
-.section-header__button-text {
+.button-text {
     color: white;
-    /* Цвет текста */
     font-size: 16px;
     font-weight: bold;
     font-family: inherit;
-}
-
-
-.form__control {
-    background-color: inherit;
-    font-size: 18px;
-    font-family: inherit;
-    color: inherit;
-    font-weight: inherit;
-}
-
-.form__textarea {
-    height: 200px;
-    width: auto;
-}
-
-.form__note {
-    font-size: 18px;
 }
 
 
@@ -219,10 +200,13 @@ h2 {
     font-size: 30px;
     margin-bottom: 30px;
     margin-top: inherit;
+    font-weight: bold;
 }
 
 .blockquote__author {
     font-style: normal;
+    font-weight: bold;
+    margin-bottom: 38px;
 }
 
 .services__list-title {
@@ -252,23 +236,23 @@ h2 {
 
 .about__text {
     font-size: 20px;
-    align-items: center;
-    margin-top: inherit;
-    margin-bottom: inherit;
-    margin-left: 50px;
-    margin-right: 50px;
+    margin: auto;
+    width: 280px;
 }
 
+
 .about {
+
+    text-align: center;
     margin-bottom: 60px;
 }
+
 
 .text-align-center {
     text-align: center;
 }
 
 .services__item {
-    list-style: none;
     padding: initial;
     width: 353px;
     height: 347px;
@@ -286,6 +270,7 @@ h2 {
 }
 
 .services__list {
+    list-style: none;
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
@@ -314,4 +299,64 @@ h2 {
     z-index: 2;
     position: relative;
     line-height: 1.5;
+}
+
+.review {
+    display: flex;
+    margin-top: 0px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.blockquote__text {
+    margin-top: 0px;
+    width: 254px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.form__control {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 18px;
+    font-family: inherit;
+    color: inherit;
+    font-weight: inherit;
+}
+
+/* Сделал минимальную ширину,чтобы корректно отображалось на экране айфон се - отступы - была задана фикс ширина 350px */
+.form__textarea {
+    height: 250px;
+    min-width: 250px;
+    background-color: rgba(12, 24, 39, 1);
+    border-radius: 5%;
+    padding: 20px 20px 20px 20px;
+    resize: none;
+    margin-bottom: 34px;
+}
+
+.form__note {
+    font-size: 18px;
+    display: flex;
+    text-align: center;
+    width: 353px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 34px;
+
+}
+
+.position-center {
+    display: flex;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.contact {
+    margin-bottom: 60px;
 }
