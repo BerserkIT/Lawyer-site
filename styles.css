@@ -35,18 +35,16 @@ h2 {
 .header {
     background-color: inherit;
     color: inherit;
-    margin-bottom: 707px;
 }
 
 .header__top {
+    padding: 20px 20px 20px 20px;
     display: flex;
     justify-content: space-between;
-    margin-bottom: 90px;
+    margin-bottom: 70px;
 }
 
 .header__top-company-name {
-    padding-top: 20px;
-    padding-left: 20px;
     font-size: 20px;
     text-decoration: none;
     color: inherit;
@@ -64,8 +62,6 @@ h2 {
 
 .page-navigation__toggle {
     padding: inherit;
-    margin-top: 20px;
-    margin-right: 20px;
     width: 36px;
     height: 36px;
     background-color: white;
@@ -117,11 +113,6 @@ h2 {
 .page-navigation__link {
     text-decoration: none;
     color: inherit;
-}
-
-.section-header {
-    margin-left: 20px;
-    margin-right: 20px;
 }
 
 .section-header__description {
@@ -211,6 +202,10 @@ h2 {
     margin-bottom: 38px;
 }
 
+.services {
+    margin-bottom: 60px;
+}
+
 .services__list-title {
     font-weight: 500;
     font-size: 24px;
@@ -236,16 +231,18 @@ h2 {
     z-index: 0;
 }
 
+.blockquote {
+    margin: 0 auto;
+    padding: 26px 37px 23px;
+}
+
 .about__text {
     font-size: 20px;
-    margin: auto;
-    width: 280px;
+    max-width: 714px;
 }
 
 
 .about {
-
-    text-align: center;
     margin-bottom: 60px;
 }
 
@@ -254,9 +251,15 @@ h2 {
     text-align: center;
 }
 
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1480px;
+    padding: 0 20px;
+}
+
 .services__item {
     padding: initial;
-    width: 353px;
     height: 347px;
     background: rgba(12, 24, 39, 1);
     border-radius: 20px;
@@ -268,40 +271,35 @@ h2 {
     position: relative;
     overflow: hidden;
     text-align: left;
-    margin: auto;
+    padding: 20px;
 }
 
 .services__list {
     list-style: none;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(353px, 355px));
     justify-content: center;
-    align-items: flex-start;
-    padding: initial;
-    margin-top: 0px;
-    margin-bottom: 60px;
+    gap: 14px;
+    margin: 0;
+    padding: 0;
 }
 
 .services__list-title {
+    margin: 0;
     font-size: 20px;
     font-weight: bold;
-    margin-top: 20px;
-    margin-left: 20px;
     z-index: 2;
     position: relative;
 }
 
 .services__list-description {
-    margin-top: 0px;
-    margin-bottom: 20px;
-    margin-left: 20px;
-    margin-right: 69px;
+    margin: 0;
     font-size: 16px;
     z-index: 2;
     position: relative;
     line-height: 1.5;
 }
+
 
 .review {
     display: flex;
@@ -309,19 +307,22 @@ h2 {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    text-align: center;
     color: white;
+    margin-bottom: 60px;
+}
+
+.review__list {
+    max-width: 864px;
 }
 
 .blockquote__text {
     margin-top: 0px;
-    width: 254px;
-    margin-left: auto;
-    margin-right: auto;
+    margin-bottom: 7px;
 }
 
 
 .form__control {
+    box-sizing: border-box;
     display: flex;
     margin-left: auto;
     margin-right: auto;
@@ -333,9 +334,9 @@ h2 {
 
 .form__textarea {
     height: 250px;
-    min-width: 250px;
+    width: 100%;
     background-color: rgba(12, 24, 39, 1);
-    border-radius: 5%;
+    border-radius: 16px;
     padding: 20px 20px 20px 20px;
     resize: none;
     margin-bottom: 34px;
@@ -343,14 +344,14 @@ h2 {
 
 .form__note {
     font-size: 18px;
-    display: flex;
-    text-align: center;
-    width: 353px;
-    margin-left: auto;
-    margin-right: auto;
     margin-bottom: 34px;
     margin-top: inherit;
 
+}
+
+.form {
+    max-width: 730px;
+    margin: 0 auto;
 }
 
 .position-center {
