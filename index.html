@@ -49,7 +49,7 @@
         </canvas>
         <section class="about">
             <div class="container">
-                <p class="about__text blockquote">At [Your Company Name], we deliver
+                <p class="about__text blockquote margin-bottom">At [Your Company Name], we deliver
                     expert legal services for businesses and
                     individuals, specializing in corporate law, family law, tax advisory, and more. Trust us to guide
                     you
@@ -99,55 +99,68 @@
                         have to say about working with us:
                     </p>
                 </header>
-                <div class="review__list">
-                    <blockquote class="blockquote">
-                        <p class="blockquote__text">
-                            "Thank you so much for this amazing opportunity to understand the deeper meanings of my
-                            dreams!
-                            It helps me sort out what is happening in my subconscious. Now I feel much calmer and more
-                            confident. Thanks to Sadhu’s interpretations, I was finally able to realize the real issue
-                            in my
-                            relationship with my husband and saved our family."
-                        </p>
-                        <footer class="blockquote__footer">
-                            <cite class="blockquote__author">Markus1, 24 years old</cite>
-                            <div class="blockquote__rating-star rating-star" role="img" aria-label="4-star rating">
-                            </div>
-                        </footer>
-                    </blockquote>
-                    <blockquote class="blockquote">
-                        <p class="blockquote__text">
-                            "Thank you so much for this amazing opportunity to understand the deeper meanings of my
-                            dreams!
-                            It helps me sort out what is happening in my subconscious. Now I feel much calmer and more
-                            confident. Thanks to Sadhu’s interpretations, I was finally able to realize the real issue
-                            in my
-                            relationship with my husband and saved our family."
-                        </p>
-                        <footer class="blockquote__footer">
-                            <cite class="blockquote__author">Markus2, 24 years old</cite>
-                            <div class="blockquote__rating-star rating-star" role="img" aria-label="5-star rating">
-                            </div>
-                        </footer>
-                    </blockquote>
-                    <blockquote class="blockquote">
-                        <p class="blockquote__text">
-                            "Thank you so much for this amazing opportunity to understand the deeper meanings of my
-                            dreams!
-                            It helps me sort out what is happening in my subconscious. Now I feel much calmer and more
-                            confident. Thanks to Sadhu’s interpretations, I was finally able to realize the real issue
-                            in my
-                            relationship with my husband and saved our family."
-                        </p>
-                        <footer class="blockquote__footer">
-                            <cite class="blockquote__author">Markus3, 24 years old</cite>
-                            <div class="blockquote__rating-star rating-star" role="img" aria-label="4-star rating">
-                            </div>
-                        </footer>
-                    </blockquote>
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <blockquote class="blockquote">
+                                <p class="blockquote__text">
+                                    "Thank you so much for this amazing opportunity to understand the deeper meanings of
+                                    my
+                                    dreams! It helps me sort out what is happening in my subconscious. Now I feel much
+                                    calmer and
+                                    more confident. Thanks to Sadhu’s interpretations, I was finally able to realize the
+                                    real
+                                    issue in my relationship with my husband and saved our family."
+                                </p>
+                                <footer class="blockquote__footer">
+                                    <cite class="blockquote__author">Markus1, 24 years old</cite>
+                                    <div class="blockquote__rating-star rating-star" role="img"
+                                        aria-label="4-star rating"></div>
+                                </footer>
+                            </blockquote>
+                        </div>
+                        <div class="swiper-slide">
+                            <blockquote class="blockquote">
+                                <p class="blockquote__text">
+                                    "Thank you so much for this amazing opportunity to understand the deeper meanings of
+                                    my
+                                    dreams! It helps me sort out what is happening in my subconscious. Now I feel much
+                                    calmer and
+                                    more confident. Thanks to Sadhu’s interpretations, I was finally able to realize the
+                                    real
+                                    issue in my relationship with my husband and saved our family."
+                                </p>
+                                <footer class="blockquote__footer">
+                                    <cite class="blockquote__author">Markus2, 24 years old</cite>
+                                    <div class="blockquote__rating-star rating-star" role="img"
+                                        aria-label="5-star rating"></div>
+                                </footer>
+                            </blockquote>
+                        </div>
+                        <div class="swiper-slide">
+                            <blockquote class="blockquote">
+                                <p class="blockquote__text">
+                                    "Thank you so much for this amazing opportunity to understand the deeper meanings of
+                                    my
+                                    dreams! It helps me sort out what is happening in my subconscious. Now I feel much
+                                    calmer and
+                                    more confident. Thanks to Sadhu’s interpretations, I was finally able to realize the
+                                    real
+                                    issue in my relationship with my husband and saved our family."
+                                </p>
+                                <footer class="blockquote__footer">
+                                    <cite class="blockquote__author">Markus3, 24 years old</cite>
+                                    <div class="blockquote__rating-star rating-star" role="img"
+                                        aria-label="4-star rating"></div>
+                                </footer>
+                            </blockquote>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
                 </div>
             </div>
         </section>
+
         <section class="contact text-align-center" id="contact">
             <div class="container">
 
@@ -171,7 +184,10 @@
             </div>
         </section>
     </main>
+    <!-- Swiper JS -->
     <script src="canvas.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="swiper.js"></script>
 </body>
 
 </html>

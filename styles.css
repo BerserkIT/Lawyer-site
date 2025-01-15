@@ -35,6 +35,7 @@ h2 {
 .header {
     background-color: inherit;
     color: inherit;
+    background-image: url("img/goddess.png");
 }
 
 .header__top {
@@ -313,7 +314,25 @@ h2 {
 
 .review__list {
     max-width: 864px;
+    display: flex;
+    /* Устанавливаем горизонтальное расположение */
+    flex-direction: row;
+    /* Располагаем элементы в одну строку */
+    overflow: hidden;
+    /* Скрываем содержимое за границами контейнера */
+    gap: 30px;
+    /* Добавляем расстояние между элементами */
 }
+
+.swiper-slide {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    /* Подгоняем ширину под содержимое */
+}
+
 
 .blockquote__text {
     margin-top: 0px;
@@ -362,4 +381,56 @@ h2 {
 
 .contact {
     margin-bottom: 60px;
+}
+
+@media (min-width: 1024px) {
+    body {
+        font-size: 24px;
+    }
+
+    .header__top {
+        padding: 23px 220px;
+        margin-bottom: 236px;
+    }
+
+    .page-navigation__toggle {
+        display: none;
+    }
+
+    .container {
+        padding: 0 220px;
+    }
+
+    h1.section-header__title {
+        font-size: 60px;
+    }
+
+    h2.section-header__title {
+        font-size: 50px;
+    }
+
+    .services__list-title {
+        font-size: 30px;
+    }
+
+    .about__text {
+        font-size: 40px;
+    }
+
+    .margin-bottom {
+        padding: 55px 139px;
+        margin-bottom: 140px
+    }
+
+    header.header {
+        margin-bottom: 414px;
+    }
+
+    .services {
+        margin-bottom: 140px;
+    }
+
+    .review {
+        margin-bottom: 140px;
+    }
 }
